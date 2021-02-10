@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: $lightGray;
+    font-size: 13px;
+    // overflow: hidden;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.container {
+    display: grid;
+    margin: 4rem;
+    align-items: center;
+    grid-template-areas:
+        "top1 top1 top2 main"
+        "bottom1 bottom2 bottom2 main";
+    gap: 20px;
+}
+
+.card {
+    width: 100%;
+    padding: 2rem;
+}
+
+.card .card-top {
+    display: flex;
+    gap: 20px;
+}
+
+.card .card-top img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 1px;
+    border: 2px solid $lightGray;
+}
+
+.card .card-top .name {
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    justify-content: center;
+}
+
+.card .card-top .name span {
+    font-size: 17px;
+    color: $lightGrayishBlue;
+}
+
+.card .card-top .name small {
+    font-size: 14px;
+    opacity: .5;
+    color: $lightGrayishBlue;
+}
+
+.card .card-content {
+    font-size: 22px;
+    color: $lightGray;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.card .card-desc {
+    color: $lightGrayishBlue;
+    opacity: .7;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.one,
+.two,
+.three,
+.four,
+.five {
+    border-radius: 10px;
+    height: 100%;
+    z-index: 3;
+}
+
+.one {
+    position: relative;
+    background-color: $moderateViolet;
+    grid-area: top1;
+}
+
+.two {
+    background-color: $veryDarkGrayishBlue;
+    grid-area: top2;
+}
+
+.three {
+    background-color: $lightGrayishBlue;
+    grid-area: bottom1;
+    color: $veryDarkBlackishBlue;
+}
+
+.four {
+    background-color: $veryDarkBlackishBlue;
+    grid-area: bottom2;
+    color: $lightGray;
+}
+
+.five {
+    height: 100%;
+    background-color: $white;
+    grid-area: main;
+}
+
+.three .card .name span,
+.three .card .name small {
+    color: $veryDarkBlackishBlue;
+}
+
+.five .card-content,
+.three .card-content {
+    color: $veryDarkBlackishBlue;
+}
+
+.five .card-desc,
+.three .card-desc {
+    color: $veryDarkGrayishBlue;
+}
+
+.five .card .name span,
+.five .card .name small {
+    color: $veryDarkGrayishBlue;
+}
+
+.quote {
+    position: absolute;
+    top: 3%;
+    right: 120px;
+    width: 100px;
+    height: 100px;
+    z-index: -1;
+    opacity: .7;
+    transform: scale(1.2);
+    background-image: url('/testimonials-grid-section-main/images/bg-pattern-quotation.svg');
+
+}
+
+@media screen and (max-width:900px) {
+    .container {
+        grid-template-areas:
+            "top1 top1 top2"
+            "main main bottom1"
+            "bottom2 bottom2 null";
+    }
+}
+@media screen and (max-width:664px) {
+    .container {
+        margin: 2rem;
+        grid-template-areas:
+            "top1 top1 top2"
+            "main main bottom1"
+            "bottom2 bottom2 null";
+    }
+}
+
+@media screen and (max-width:374px) {
+    .container {
+        margin: 2rem;
+        grid-template-areas:
+            "top1"
+            "top2"
+            "main"
+            "bottom1"
+            "bottom2";
+    }
+}
